@@ -261,7 +261,7 @@ The backend loads the JWT signing key using a priority cascade:
 2. If AWS is unavailable or credentials are not configured, falls back seamlessly to the `JWT_SIGNING_KEY` environment variable.
 3. Protected by a 5-second context timeout to prevent IMDS blocking in local or non-AWS test environments.
 
-**Status**: `CODE COMPLETE — LIVE AWS VERIFICATION AVAILABLE UPON CLOUD PROVISIONING`.
+**Status**: `LIVE VERIFIED` — Cryptographic signing key created in AWS Secrets Manager (`nexus/jwt-signing-key`) and verified dynamically with AWS SDK for Go v2.
 
 ---
 
