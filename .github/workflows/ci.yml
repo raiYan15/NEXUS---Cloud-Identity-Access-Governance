@@ -15,10 +15,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Go 1.22
+      - name: Set up Go 1.23
         uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: '1.23'
           cache-dependency-path: backend/go.sum
 
       - name: Install Dependencies
@@ -29,7 +29,7 @@ jobs:
         working-directory: backend
         env:
           JWT_SIGNING_KEY: test_github_actions_secret_key_32_bytes_long
-        run: go test -v -race -coverprofile=coverage.out -coverpkg=./... ./...
+        run: go test -v -race -coverprofile=coverage.out ./...
 
       - name: Build Go Binary
         working-directory: backend
