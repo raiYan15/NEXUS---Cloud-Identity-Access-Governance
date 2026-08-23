@@ -29,7 +29,7 @@ jobs:
         working-directory: backend
         env:
           JWT_SIGNING_KEY: test_github_actions_secret_key_32_bytes_long
-        run: go test -v -race -coverprofile=coverage.out ./...
+        run: go test -v -race -coverprofile=coverage.out -coverpkg=./... ./...
 
       - name: Build Go Binary
         working-directory: backend
