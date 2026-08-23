@@ -11,6 +11,9 @@ import (
 )
 
 func TestAWS_LiveCredentialsVerification(t *testing.T) {
+	if os.Getenv("AWS_ACCESS_KEY_ID") == "" && os.Getenv("AWS_PROFILE") == "" {
+		t.Skip("Skipping live AWS test: no AWS credentials configured (set AWS_ACCESS_KEY_ID or AWS_PROFILE)")
+	}
 	if os.Getenv("AWS_REGION") == "" {
 		os.Setenv("AWS_REGION", "us-east-1")
 	}

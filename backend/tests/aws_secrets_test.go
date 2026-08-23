@@ -3,6 +3,7 @@ package tests
 import (
 	"context"
 	"errors"
+	"os"
 	"testing"
 	"time"
 
@@ -15,6 +16,9 @@ import (
 )
 
 func TestAWS_SecretsManager_LiveKeyRetrieval(t *testing.T) {
+	if os.Getenv("AWS_ACCESS_KEY_ID") == "" && os.Getenv("AWS_PROFILE") == "" {
+		t.Skip("Skipping live AWS test: no AWS credentials configured (set AWS_ACCESS_KEY_ID or AWS_PROFILE)")
+	}
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
