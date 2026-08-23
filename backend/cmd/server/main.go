@@ -47,8 +47,8 @@ func main() {
 		log.Println("[INFO] Persistence layer: Thread-safe In-Memory Store")
 	}
 
-	// Seed development users if DEV_SEED=true
-	if os.Getenv("DEV_SEED") == "true" {
+	// Seed development users if DEV_SEED=true, or automatically when using in-memory store
+	if os.Getenv("DEV_SEED") == "true" || dbURL == "" {
 		seedDevUsers(userStore)
 	}
 
