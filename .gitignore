@@ -1,0 +1,71 @@
+# Secrets & credentials — NEVER commit these
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+.aws/
+aws-credentials
+
+# Go
+bin/
+dist/
+build/
+*.exe
+*.test
+*.out
+vendor/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+.next/
+*.tsbuildinfo
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+.terraformrc
+terraform.rc
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+coverage.out
+coverage.html
+htmlcov/
